@@ -163,7 +163,7 @@ def birthdays(book):
     return upcoming_birthdays
 
 def main():
-    book = AddressBook()
+    book = load_data()
     print("Welcome to the assistant bot!")
     while True:
         user_input = input("Enter a command: ").strip().lower()
@@ -171,6 +171,7 @@ def main():
 
         if command in ["close", "exit"]:
             print("Good bye!")
+            save_data(book)
             break
 
         elif command == "hello":
